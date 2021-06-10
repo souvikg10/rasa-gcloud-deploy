@@ -5,9 +5,9 @@ steps:
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/cat-food-finder/rasa-bot']
-# Deploy container image to Cloud Run
+# Deploy container image to Cloud Run -https://cloud.google.com/sdk/gcloud/reference/run/services/update
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'rasa-bot-api', '--image', 'gcr.io/cat-food-finder/rasa-bot', '--region', 'us-east1', '--platform', 'managed']
+  args: ['run', 'deploy', 'rasa-bot-api', '--image', 'gcr.io/cat-food-finder/rasa-bot', '--region', 'us-east1', '--platform', 'managed', '--memory', '2Gi', '--allow-unauthenticated']
 images:
 - gcr.io/cat-food-finder/rasa-bot

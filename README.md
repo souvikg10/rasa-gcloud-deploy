@@ -1,4 +1,4 @@
-## Simple Rasa Bot on Google Cloud
+# Simple Rasa Bot on Google Cloud
 
 This repository shows how to deploy your Rasa Bot onto Google Cloud Run
 
@@ -60,7 +60,7 @@ run
 gcloud builds submit
 ```
 
-Upon success, you will see the deployed URL.
+Upon success, Go to the google cloud console, check Cloud Run and the newly created service, click open and see the URL.
 
 ## Test the service
  Curl the following
