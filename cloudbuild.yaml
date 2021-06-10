@@ -1,0 +1,13 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/cat-food-finder/rasa-bot', '.']
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/cat-food-finder/rasa-bot']
+# Deploy container image to Cloud Run
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: gcloud
+  args: ['run', 'deploy', 'rasa-bot-api', '--image', 'gcr.io/cat-food-finder/rasa-bot', '--region', 'us-east1', '--platform', 'managed']
+images:
+- gcr.io/cat-food-finder/rasa-bot
