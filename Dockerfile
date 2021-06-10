@@ -1,4 +1,4 @@
-FROM rasa/rasa:2.7
+FROM rasa/rasa:latest
 
 COPY . .
 EXPOSE 5005
