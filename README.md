@@ -73,3 +73,14 @@ Upon success, Go to the google cloud console, check Cloud Run and the newly crea
   "message": "I am good"
 }'
  ```
+
+ Response
+
+ ```
+ [
+    {
+        "recipient_id": "test_user",
+        "text": "Great, carry on!"
+    }
+]
+```
