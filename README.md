@@ -66,4 +66,10 @@ Upon success, Go to the google cloud console, check Cloud Run and the newly crea
  Curl the following
 
  ```
+ curl --location --request POST 'https://YOUR-URL/webhooks/rest/webhook' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "sender": "test_user", 
+  "message": "I am good"
+}'
  ```
